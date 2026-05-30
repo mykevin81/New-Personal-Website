@@ -1,4 +1,3 @@
-import React from 'react';
 import { FadeIn, StaggerContainer, StaggerItem } from './ui/FadeIn';
 const ROLES = [
 {

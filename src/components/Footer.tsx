@@ -1,8 +1,15 @@
-import React from 'react';
 import { FadeIn } from './ui/FadeIn';
 import { ArrowUpRight } from 'lucide-react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const socialLinks = [
+    { label: 'GitHub', href: 'https://github.com/mykevin81' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kevinhwangin/' },
+    { label: 'Twitter / X', href: 'https://x.com/mykevin81' },
+    { label: 'Read.cv', href: 'https://read.cv/yourusername' },
+  ];
+  // TODO: change cv to download resume
+
   return (
     <footer className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-stone bg-paper-dark text-ink mt-24">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
@@ -10,7 +17,7 @@ export function Footer() {
           <FadeIn>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 leading-tight">
               Let's build something{' '}
-              <span className="text-terracotta italic">meaningful</span>{' '}
+              <span className="text-terracotta italic">impactful</span>{' '}
               together.
             </h2>
             <a
@@ -28,13 +35,13 @@ export function Footer() {
             <p className="font-mono text-xs uppercase tracking-widest text-ink-light mb-2">
               Elsewhere
             </p>
-            {['GitHub', 'LinkedIn', 'Twitter / X', 'Read.cv'].map((link) =>
+            {socialLinks.map((link) =>
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
               className="text-ink/80 hover:text-terracotta transition-colors w-fit flex items-center gap-2 group">
               
-                {link}
+                {link.label}
                 <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all" />
               </a>
             )}
