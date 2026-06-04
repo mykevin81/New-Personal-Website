@@ -75,7 +75,7 @@ The site will be available at `http://localhost:8080`.
 
 ```bash
 # Run the container
-docker run -p 8080:4173 -v "{RESUME_FOLDER_LOCATION}:/app/dist/downloads:ro" personal-website
+docker run -p 8080:80 -v "{RESUME_FOLDER_LOCATION}:/app/dist/downloads:ro" personal-website
 ```
 
 The site will be available at `http://localhost:8080`.
