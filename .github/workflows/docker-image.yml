@@ -42,7 +42,6 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value=${{ steps.package-version.outputs.version }}
             type=raw,value=v${{ steps.package-version.outputs.version }}
-            type=sha,prefix=sha-,format=short
 
       - name: Build and push Docker image
         id: build-and-push
