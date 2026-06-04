@@ -2,13 +2,12 @@ import { FadeIn } from './ui/FadeIn';
 import { ArrowUpRight } from 'lucide-react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const socialLinks = [
+  const socialLinks: { label: string; href: string; download?: string }[] = [
     { label: 'GitHub', href: 'https://github.com/mykevin81' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kevinhwangin/' },
     { label: 'Twitter / X', href: 'https://x.com/mykevin81' },
-    { label: 'Read.cv', href: 'https://read.cv/yourusername' },
+    { label: 'Resume', href: '/downloads/resume.pdf', download: 'Kevin_Hwang_Resume.pdf' },
   ];
-  // TODO: change cv to download resume
 
   return (
     <footer className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-stone bg-paper-dark text-ink mt-24">
@@ -39,6 +38,7 @@ export function Footer() {
             <a
               key={link.label}
               href={link.href}
+              {...(link.download ? { download: link.download } : { target: '_blank', rel: 'noopener noreferrer' })}
               className="text-ink/80 hover:text-terracotta transition-colors w-fit flex items-center gap-2 group">
               
                 {link.label}
