@@ -7,6 +7,38 @@ My personal website. More design changes incoming
 1. Run `npm install`
 2. Run `npm run dev`
 
+## Testing
+
+This project uses **Vitest** and **React Testing Library** for unit and component testing.
+
+### Running Tests
+
+```bash
+# Run tests in watch mode
+npm test
+
+# Run tests once (CI mode)
+npm test -- --run
+
+# Open interactive test UI dashboard
+npm test:ui
+
+# Generate coverage report
+npm test:coverage
+```
+
+Tests are located in `src/**/*.test.tsx` files. The App component has comprehensive test coverage including rendering, styling, DOM structure, and accessibility checks.
+
+### Available Commands
+
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Start dev server (Vite) |
+| `npm run build` | Production build |
+| `npm run lint` | ESLint check |
+| `npm test` | Run tests in watch mode |
+| `npm test:ui` | Interactive test UI |
+
 ## Docker
 
 ### Docker build
